@@ -9,7 +9,7 @@ SRC= ft_strlen.s	\
 
 OBJ=$(SRC:.s=.o)
 
-CC = gcc -Wall -Werror -Wextra
+CC = gcc -Wall -Werror -Wextra -g
 NASM = nasm -f elf64
 
 all: $(NAME)

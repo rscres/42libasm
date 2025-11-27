@@ -10,19 +10,19 @@ ft_strdup:
     test rdi, rdi
     jz error
     call ft_strlen
-    test rax, rax
-    jz error
+    cmp rax, 0
+    jl error
     push rdi
     inc rax
     mov rdi, rax
     call malloc wrt ..plt
-    test rax, rax
-    jz error
+    cmp rax, 0
+    jl error
     pop rsi
     mov rdi, rax
     call ft_strcpy
-    test rax, rax
-    jz error
+    cmp rax, 0
+    jl error
     ret
 
 error:

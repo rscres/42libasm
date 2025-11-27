@@ -187,6 +187,7 @@ void	test_read(void)
 void test_ft_strdup() {
     const char *str = "Hello, world!";
     const char *null_str = NULL;
+	const char *empty_str = "";
     char *dup_str;
 
     printf("Testing ft_strdup:\n");
@@ -203,6 +204,14 @@ void test_ft_strdup() {
     if (dup_str == NULL) {
         perror("ft_strdup with NULL");
     }
+
+	dup_str = ft_strdup(empty_str);
+    if (dup_str == NULL) {
+        perror("ft_strdup with empty string");
+    } else {
+		printf("ft_strdup(\"%s\") = \"%s\"\n", str, dup_str);
+        free(dup_str);
+	}
 }
 
 int main(void) {
